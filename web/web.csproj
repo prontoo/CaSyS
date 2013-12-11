@@ -94,7 +94,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CaSys\CaSys.csproj">
+    <ProjectReference Include="..\CaSys\CaSys.csproj">
       <Project>{13db1bb5-67ca-4f5b-8803-697a847da81b}</Project>
       <Name>CaSys</Name>
     </ProjectReference>
