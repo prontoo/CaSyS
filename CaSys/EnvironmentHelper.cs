@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="EnvironmentHelper.cs" company="Nextsense">
-//   © 2010 Nextsense
-// </copyright>
-// <summary>
-//   Defines the EnvironmentHelper type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Configuration;
 using System.Web;
 

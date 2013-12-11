@@ -65,8 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casys.cs" />
-    <Compile Include="CasysForm.cs" />
-    <Compile Include="Enumerations.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Pay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckOut.aspx" />
+    <Content Include="PayFailed.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="config\app.config" />
     <None Include="Web.Debug.config">
@@ -82,6 +83,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PayFailed.aspx.cs">
+      <DependentUpon>PayFailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayFailed.aspx.designer.cs">
+      <DependentUpon>PayFailed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">

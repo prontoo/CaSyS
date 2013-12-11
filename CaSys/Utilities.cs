@@ -15,11 +15,6 @@ namespace CaSys
         private static ResourceManager _rm;
         private static ResourceManager _rmError;
 
-        public string GetServiceUrl(string key)
-        {
-            return ConfigurationManager.AppSettings["WebServiceUrl"] + ConfigurationManager.AppSettings[key];
-        }
-
         public string LanguageSetAndReturn(string lang)
         {
             try
@@ -283,7 +278,7 @@ namespace CaSys
                  {"Country", casys.Country},
                  {"Telephone", casys.Telephone},
                  {"Email", casys.Email},
-                 {"cPayPaymentRef", casys.cPayPaymentRef}
+                 {"cPayPaymentRef", casys.CPayPaymentRef}
              };
             return inputs;
         }

@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------- 
-// <copyright file="ReturnedParameters.cs" company="Nextsense">
-//   © 2010 Nextsense
-// </copyright>
-// <summary>
-//   Defines the ReturnedParameters type.
-// </summary>
-// ---------------------------------------------------------------------------------------------------------------------
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CaSys
 {

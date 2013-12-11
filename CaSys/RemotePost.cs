@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------- 
-// <copyright file="RemotePost.cs" company="Nextsense">
-//   © 2010 Nextsense
-// </copyright>
-// <summary>
-//   Defines the RemotePost type.
-// </summary>
-// ---------------------------------------------------------------------------------------------------------------------
-
-namespace CaSys
+﻿namespace CaSys
 {
     using System;
     using System.Collections.Specialized;
@@ -129,27 +120,6 @@ namespace CaSys
 
             _inputs.Add("CheckSumHeader", casys.CheckSumHeader);
             _inputs.Add("CheckSum", casys.CheckSum);
-            GenerateTmCheckSum(casys);
-        }
-
-        private void GenerateTmCheckSum(Casys casys)
-        {
-            var headerParamsValues = string.Empty;
-            for (var i = 0; i < casys.TMNameValues.Count; i++)
-            {
-                var nameValue = casys.TMNameValues;
-                if (string.IsNullOrEmpty(nameValue.Get(i)))
-                {
-                    continue;
-                }
-
-                headerParamsValues += nameValue.Get(i);
-            }
-
-            var tmCheckSumHeader = headerParamsValues;
-            casys.TMCheckSum = FormsAuthentication.HashPasswordForStoringInConfigFile(headerParamsValues + casys.CasysPassword, "MD5");
-            _inputs.Add("TMCheckSumHeader", tmCheckSumHeader);
-            _inputs.Add("TMChecksum", casys.TMCheckSum);
         }
 
         public NameValueCollection PostData(Casys casys, bool isFormParams)
@@ -175,18 +145,6 @@ namespace CaSys
                     _inputs.Add("Country", casys.Country);
                     _inputs.Add("Telephone", casys.Telephone);
                     _inputs.Add("Email", casys.Email);
-                }
-                else
-                {
-                    for (var i = 0; i < casys.TMNameValues.Count; i++)
-                    {
-                        if (string.IsNullOrEmpty(casys.TMNameValues.Get(i)))
-                        {
-                            continue;
-                        }
-
-                        _inputs.Add(casys.TMNameValues.GetKey(i), casys.TMNameValues.Get(i));
-                    }
                 }
             }
 
