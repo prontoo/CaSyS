@@ -141,7 +141,7 @@ namespace web
                 lang = requestResponse.Details3;
 
                 requestResponse.CasysPassword = EnvironmentHelper.CasysPasswordInvoices;
-                requestResponse.CasysUrl = EnvironmentHelper.ReturnCasysURL(lang);
+                requestResponse.CasysUrl = EnvironmentHelper.ReturnCasysUrl(lang);
                 casysTransactionId = requestResponse.cPayPaymentRef;
                 tmisIssuedByAcquirer = requestResponse.TMisIssuedByAcquirer;
             }
@@ -445,9 +445,9 @@ namespace web
                 // Some default values 
                 c.PaymentOKURL = EnvironmentHelper.PaymentOkurlInvoices + "?orderId=" + o.SessionID + "&lang=" + language;
                 c.PaymentFailURL = EnvironmentHelper.PaymentFailurlInvoices + "?orderId=" + o.SessionID + "&lang=" + language;
-                c.PayToMerchant = Settings.Default.MerchantIdInvoices;
+                c.PayToMerchant = ConfigurationManager.AppSettings["MerchantIdInvoices;
                 c.AmountCurrency = "MKD";
-                c.MerchantName = Settings.Default.MerchantName;
+                c.MerchantName = ConfigurationManager.AppSettings["MerchantName;
                 c.CasysPassword = EnvironmentHelper.CasysPasswordInvoices;
 
                 alredyPayed = o.PaymentSuccess;

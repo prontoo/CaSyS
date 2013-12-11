@@ -81,26 +81,26 @@ namespace CaSys
             set;
         }
 
-        public static bool EnableInvoices
+        public static bool EnableShopping
         {
             get;
             set;
         }
 
-        public static string ReturnCasysURL(string lang)
+        public static string ReturnCasysUrl(string lang)
         {
             if (IsTestEnvironment())
             {
                 switch (lang.ToUpper())
                 {
                     case "MK":
-                        CasysUrlLang = Settings.Default.TestCasysURL;
+                        CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL"];
                         break;
                     case "EN":
-                        CasysUrlLang = Settings.Default.TestCasysURL_EN;
+                        CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL_EN"];
                         break;
                     case "AL":
-                        CasysUrlLang = Settings.Default.TestCasysURL_AL;
+                        CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL_AL"];
                         break;
                 }
             }
@@ -109,13 +109,13 @@ namespace CaSys
                 switch (lang.ToUpper())
                 {
                     case "MK":
-                        CasysUrlLang = Settings.Default.CasysURL;
+                        CasysUrlLang = ConfigurationManager.AppSettings["CasysURL"];
                         break;
                     case "EN":
-                        CasysUrlLang = Settings.Default.CasysURL_EN;
+                        CasysUrlLang = ConfigurationManager.AppSettings["CasysURL_EN"];
                         break;
                     case "AL":
-                        CasysUrlLang = Settings.Default.CasysURL_AL;
+                        CasysUrlLang = ConfigurationManager.AppSettings["CasysURL_AL"];
                         break;
                 }
             }
@@ -138,47 +138,47 @@ namespace CaSys
                     switch (language.ToUpper())
                     {
                         case "MK":
-                            CasysUrlLang = Settings.Default.TestCasysURL;
+                            CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL"];
                             break;
                         case "EN":
-                            CasysUrlLang = Settings.Default.TestCasysURL_EN;
+                            CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL_EN"];
                             break;
                         case "AL":
-                            CasysUrlLang = Settings.Default.TestCasysURL_AL;
+                            CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL_AL"];
                             break;
                         default:
-                            CasysUrlLang = Settings.Default.TestCasysURL;
+                            CasysUrlLang = ConfigurationManager.AppSettings["TestCasysURL"];
                             break;
                     }
 
-                    PaymentOkurlInvoices = Settings.Default.TestCaSysOkUrlInvoices;
-                    PaymentFailurlInvoices = Settings.Default.TestCaSysFailUrlInvoices;
-                    CasysPasswordInvoices = Settings.Default.CasysPasswordInvoices;
+                    PaymentOkurlInvoices = ConfigurationManager.AppSettings["TestCaSysOkUrl"];
+                    PaymentFailurlInvoices = ConfigurationManager.AppSettings["TestCaSysFailUrl"];
+                    CasysPasswordInvoices = ConfigurationManager.AppSettings["CasysPassword"];
                 }
                 else
                 {
-                    PaymentOkurlInvoices = Settings.Default.CaSysOkUrlInvoices;
-                    PaymentFailurlInvoices = Settings.Default.CaSysFailUrlInvoices;
+                    PaymentOkurlInvoices = ConfigurationManager.AppSettings["CaSysOkUrl"];
+                    PaymentFailurlInvoices = ConfigurationManager.AppSettings["CaSysFailUrl"];
                     switch (language.ToUpper())
                     {
                         case "MK":
-                            CasysUrlLang = Settings.Default.CasysURL;
+                            CasysUrlLang = ConfigurationManager.AppSettings["CasysURL"];
                             break;
                         case "EN":
-                            CasysUrlLang = Settings.Default.CasysURL_EN;
+                            CasysUrlLang = ConfigurationManager.AppSettings["CasysURL_EN"];
                             break;
                         case "AL":
-                            CasysUrlLang = Settings.Default.CasysURL_AL;
+                            CasysUrlLang = ConfigurationManager.AppSettings["CasysURL_AL"];
                             break;
                     }
 
-                    CasysPasswordInvoices = Settings.Default.CasysPasswordInvoices;
+                    CasysPasswordInvoices = ConfigurationManager.AppSettings["CasysPassword"];
                 }
 
                 BankId = Convert.ToInt32(ConfigurationManager.AppSettings["BankID"]);
 
                 DealerId = ConfigurationManager.AppSettings["DealerID"];
-                EnableInvoices = Convert.ToBoolean(Settings.Default.EnableInvoices);
+                EnableShopping = Convert.ToBoolean(ConfigurationManager.AppSettings["EnableShopping"]);
                 Language = language;
             }
             catch (Exception ex)
