@@ -37,11 +37,6 @@ namespace CaSys
         private string _submitControl = string.Empty;
         private string _cPayPaymentRef = string.Empty;
 
-        private string _tmBannerImg = string.Empty;
-        private string _tmStep2Img = string.Empty;
-        private string _tmStep3Img = string.Empty;
-        private string _tmServiceTitle = string.Empty;
-        private string _tmCheckSum = string.Empty;
 
         public string AmountToPay
         {
@@ -179,34 +174,5 @@ namespace CaSys
             get { return _cPayPaymentRef; }
             set { _cPayPaymentRef = value; }
         }
-        public string TMBannerImg
-        {
-            get { return _tmBannerImg; }
-            set { _tmBannerImg = value; }
-        }
-        public string TMStep2Img
-        {
-            get { return _tmStep2Img; }
-            set { _tmStep2Img = value; }
-        }
-        public string TMStep3Img
-        {
-            get { return _tmStep3Img; }
-            set { _tmStep3Img = value; }
-        }
-
-        public string TMServiceTitle
-        {
-            get { return _tmServiceTitle; }
-            set { _tmServiceTitle = value; }
-        }
-
-        public string TMCheckSum
-        {
-            get { return _tmCheckSum; }
-            set { _tmCheckSum = value; }
-        }
-        
-        public NameValueCollection TMNameValues = new NameValueCollection();
     }
 }

@@ -7,11 +7,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using CaSys;
-using Nextsense.MyTMobile.Web.Website.Helpers;
 
 namespace web
 {
-    public partial class WebForm1 : Page
+    public partial class PaySuccess : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

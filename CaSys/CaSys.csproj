@@ -68,6 +68,7 @@
     <Compile Include="CasysForm.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="EnvironmentHelper.cs" />
+    <Compile Include="Pay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemotePost.cs" />
     <Compile Include="RequestResponse.cs" />

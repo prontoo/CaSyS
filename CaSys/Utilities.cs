@@ -1,29 +1,15 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Utilities.cs" company="Nextsense">
-//   Utilities
-// </copyright>
-// <summary>
-//   Defines the Utilities type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.IO;
+using System.Reflection;
+using System.Resources;
+using System.Web;
+using System.Web.Security;
+using System.Xml;
 
-using System.Net;
-
-
-namespace Nextsense.MyTMobile.Web.Website.Helpers
+namespace CaSys
 {
-    using System;
-    using System.Collections.Specialized;
-    using System.Configuration;
-    using System.IO;
-    using System.Reflection;
-    using System.Resources;
-    using System.Web;
-    using System.Web.Security;
-    using System.Xml;
-    using CaSys;
-
-
     public class Utilities
     {
         private static ResourceManager _rm;
@@ -102,21 +88,6 @@ namespace Nextsense.MyTMobile.Web.Website.Helpers
                 return key;
             }
         }
-
-        //public static eRecharge GetService()
-        //{
-        //    try
-        //    {
-        //        var u = new Utilities();
-        //        var srv = new eRecharge { Timeout = 10000, Proxy = new WebProxy(u.GetServiceUrl("Web_eRecharge_eRecharge")) };
-        //        return srv;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
-
-        //    return null;
-        //}
 
         #region MD5 Validation
 
@@ -328,54 +299,5 @@ namespace Nextsense.MyTMobile.Web.Website.Helpers
             var isTest = Convert.ToBoolean(ConfigurationManager.AppSettings["TestEnvironment"]);
             return isTest;
         }
-
-        internal string GetThumbImagePath(string tip, string Product_M_ID)
-        {
-            if (!string.IsNullOrEmpty(Product_M_ID))
-            {
-                return "~/GetImage.aspx?tip=" + tip + "&id=" + Product_M_ID.Trim() + "&width=" + 120 + "&height=" + 120;
-            }
-
-            return "~/App_Themes/Default/images/noImageAvailable.jpg";
-        }
-
-        internal string GetHrefString(string tip, string Product_M_ID)
-        {
-            if (!string.IsNullOrEmpty(Product_M_ID))
-            {
-                return "~/GetImage.aspx?tip=" + tip + "&id=" + Product_M_ID.Trim() + "&width=" + 223 + "&height=" + 223;
-            }
-
-            return "#";
-        }
-
-        //internal bool HasPermission(UserDelegatePermission userDelegatePermission, LoginInfo loginInfo)
-        //{
-        //    List<NumberPermission> assigned = Provider.GetAssignedPermissions(loginInfo);
-        //    return assigned.Any(p => (p.Permission & userDelegatePermission) == userDelegatePermission);
-        //}
-
-        //internal bool LimitedProfile(LoginInfo loginInfo) ////';;;
-        //{
-        //    if (loginInfo.UserInfo.Status == "b")
-        //    {
-        //        switch (loginInfo.CustomerType)
-        //        {
-        //            case CustomerTypeEnum.PostpaidFlatBussinesMember:
-        //            case CustomerTypeEnum.PostpaidFlatBussinesOwner:
-        //                return false;
-        //            case CustomerTypeEnum.PostpaidFlat:
-        //            case CustomerTypeEnum.PostpaidFlatGroupOwner:
-        //            case CustomerTypeEnum.PostpaidFlatMember:
-        //            case CustomerTypeEnum.MAVraboten:
-        //            case CustomerTypeEnum.TMEmployee:
-        //            case CustomerTypeEnum.CustomerRelevantBusiness:
-        //            case CustomerTypeEnum.Prepaid:
-        //                return true;
-        //        }
-        //    }
-
-        //    return false;
-        //}
     }
 }

@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CheckOut.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="config\app.config" />
     <None Include="Web.Debug.config">
@@ -69,9 +70,16 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="PaySuccess.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -83,12 +91,12 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="PaySuccess.aspx.cs">
+      <DependentUpon>PaySuccess.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="PaySuccess.aspx.designer.cs">
+      <DependentUpon>PaySuccess.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
